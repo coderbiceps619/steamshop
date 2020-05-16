@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title><%= pagetitle %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500">
+    <link rel="stylesheet" href="/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body id="body">
+    <section id="add-sec">
+        <%- include('includes/nav.ejs') %>
+    </section>
+    <section class="formsec" id="form-sec">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+        <h1 class="text-center" id="h2" style="color: rgb(255,255,255);padding-top: 66px;">BUY GAMES</h1>
+        <p class="text-center" id="h2-para">Buy steam account &amp; there dedicated games</p>
+    </section>
+    <section id="realform">
+    <div class="contact-clean">
+        <div class="centered">
+            <% if (prods.length > 0) {%>
+        <div class="row">
+                <% for (let product of prods) { %>
+        <div class="card" style="width: 25rem; height: auto; margin-left: 10px; margin-bottom: 10px;">
+            <img class="card-img-top" src="<%= product.imgurl %>" alt="<%= product.title%>">
+            <div class="card-body">
+              <h5 class="card-title" style="text-transform: uppercase;"><%= product.title %></h5>
+              <h5 class="card-title">PRICE :  &#8377 <%= product.price %></h5>
+              <h5 class="card-title">OTHER GAMES :</h5>
+              <p class="card-text"> FOR OTHER GAMES CLICK DETAILS TAB</p>
+              <div style="text-align: center;">
+                <% if(isauth) {%>
+              <a href="/cart/<%= product._id%>" class="btn btn-primary cardbtn solid">Add to cart</a>
+              <% } %>
+               <a href="/product/<%= product._id%>" class="btn btn-primary cardbtn">Details</a>
+            </div>
+            </div>
+        </div>
+          <% } %>
+        </div>
+        <% } else { %>
+            <h2 style="text-align: center;">NO PRODUCTS FOUND </h2>
+            <% } %>
+        </div>
+        </div>
+</section>
+    <script src="/css/jquery.min.js"></script>
+    <script src="/css/bootstrap.min.js"></script>
+</body>
+
+</html>

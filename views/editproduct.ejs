@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title><%= pagetitle %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500">
+    <link rel="stylesheet" href="/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body id="body">
+    <section id="add-sec">
+        <%- include('includes/nav.ejs') %>
+    </section>
+    <section class="formsec" id="form-sec">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+        <h1 class="text-center" id="h2" style="color: rgb(255,255,255);padding-top: 66px;">EDIT PRODUCT</h1>
+        <p class="text-center" id="h2-para">Edit your steam account &amp; dedicated games details</p>
+    </section>
+    <section id="realform">
+        <div class="contact-clean">
+            <form method="post" action="/edit-product">
+                <h2 class="text-center">EDIT PRODUCT</h2>
+                <div  class="form-group">   <label>Game</label> <input class="form-control" type="text" name="title" value="<%= product.title%>" placeholder="Your acc main game"> </div>
+                    <div  class="form-group">   <label>Image Url</label> <input class="form-control" type="file" name="imgurl">  </div>
+                <div class="form-group"> <label>Account Description</label> <textarea class="form-control" name="description" value="<%= product.description %>" placeholder="Your acc complete games" rows="14"></textarea> </div>
+                <div  class="form-group">   <label>Steam Id </label> <input class="form-control" type="text"  value="<%= product.steamId%>" name="steamId"> </div>
+                    <div  class="form-group">   <label>Steam Password</label> <input class="form-control" type="text" name="steampassword"  value="<%= product.steampassword%>"> </div>
+                        <div  class="form-group">   <label>Price</label> <input class="form-control" type="number"  value="<%= product.price%>" name="price">   </div>
+                        <input type="hidden" value="<%= product._id %>" name="productid">
+                <div class="form-group"> <button class="btn btn-primary" type="submit">UPDATE GAME</button> </div>
+            </form>
+        </div>
+    </section>
+    <script src="/css/jquery.min.js"></script>
+    <script src="/css/bootstrap.min.js"></script>
+</body>
+
+</html>

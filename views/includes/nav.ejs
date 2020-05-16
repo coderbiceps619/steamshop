@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light navbar-expand-md " id="main-nav">
+    <div class="container-fluid"><a class="navbar-brand" href="/home"><img src="/img/Coder_Biceps_Logo.png" style="width: 200px; height: auto;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"
+            id="navcol-1">
+            <ul class="nav navbar-nav mx-auto" id="main-navli">
+                <li class="nav-item" role="presentation" id="navli" style="color: rgb(255,255,255);"><a class="nav-link <%= path === '/home' ? 'active' : '' %>" id="nav-links" href="/">HOME</a></li>
+                 <% if(isauth) { %>
+                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/addproduct' ? 'active' : '' %> " id="nav-links" href="/add-products">ADD PRODUCTS</a></li>
+                <li class="nav-item" role="presentation" id="navli"><a class="nav-link  <%= path === '/adminproduct' ? 'active' : '' %> " id="nav-links" href="/admin-products">ADMIN PRODUCTS</a></li>
+                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/cart' ? 'active' : '' %> " id="nav-links" href="/cart">CART</a></li>
+                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/orders' ? 'active' : '' %> " id="nav-links" href="/orderspage">ORDERS</a></li>
+                 <% }%>
+            </ul>
+            <ul class="nav navbar-nav mx-auto" id="main-navli">
+                <% if (!isauth) {%>
+                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/login' ? 'active' : '' %> " id="nav-links" href="/login">LOGIN</a></li>
+                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/signup' ? 'active' : '' %> " id="nav-links" href="/signup">SIGNUP</a></li>
+                <% } else { %>
+                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/login' ? 'active' : '' %> " id="nav-links" href="/logout">LOGOUT</a></li>
+                <% } %>
+               
+            </ul>
+        </div>
+    </div>
+</nav

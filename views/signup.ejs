@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title><%= pagetitle %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body style="font-family: Montserrat, sans-serif;">
+    <section id="add-sec">
+        <%- include('includes/nav.ejs') %>
+    </section>
+    <section class="formsec" id="form-sec">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+        <h1 class="text-center" id="h2" style="color: rgb(255,255,255);padding-top: 66px;">SIGNUP</h1>
+        <p class="text-center" id="h2-para">Create a brand new Buyer &amp; Seller account</p>
+    </section>
+
+    <% if(errormessage) { %>
+        <div style="text-align: center; margin-top: 50px;" class="alert alert-warning">
+            <strong > <%= errormessage %></strong>
+    </div>
+      <% } %>
+
+    <div class="register-photo">
+        <div class="form-container">
+            <div class="image-holder"></div>
+            <form method="post" action="/signup" novalidate>
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="User Name" value="<%= oldinput.name %>"></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" value="<%= oldinput.email %>"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" value="<%= oldinput.password %>"></div>
+                <div class="form-group"><input class="form-control" type="password" name="confirmpassword" placeholder="Password (repeat)" value="<%= oldinput.confirmpassword %>"></div>
+                <div class="form-group"><input class="form-control" type="tel" name="contactnumber" placeholder="Contact Number" value="<%= oldinput.contactnumber %>" required></div>
+                <div class="form-group">
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
+                </div>
+                <div class="form-group"><button class="btn btn-primary btn-block" id="signupbtn" type="submit">Sign Up</button></div><a class="already" href="#">You already have an account? Login here.</a></form>
+        </div>
+    </div>
+    <script src="/css/jquery.min.js"></script>
+    <script src="/css/js/bootstrap.min.js"></script>
+</body>
+
+</html>
