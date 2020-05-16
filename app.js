@@ -8,10 +8,10 @@ const multer = require('multer');
 const mongoose = require('mongoose');
 const User = require('./models/user');
 const app = express();
-
+const helmet = require('helmet');
 const stripe = require('stripe')('sk_test_bR91izX4vLiwfnpmznILatUl00CJtWAT55');
 
-const MongoDBuri = 'mongodb+srv://manu:steamshop@steamshop-wqpap.mongodb.net/shop' ;
+const MongoDBuri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@steamshop-wqpap.mongodb.net/${process.env.MONGO_DATABASE}` ;
 
 const store = new MongoDBStore({
     uri : MongoDBuri ,
@@ -55,6 +55,7 @@ app.use(session(
 );
 
 app.use(flash());
+app.use(helmet());
 
 app.use((req, res, next) => {
     if (!req.session.user) {
@@ -89,7 +90,7 @@ app.use(authRoutes);
 
 mongoose.connect(MongoDBuri)
 .then(result =>{
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
     console.log(result); 
 })
 .catch(err =>{
