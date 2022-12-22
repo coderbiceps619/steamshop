@@ -11,7 +11,7 @@ const app = express();
 const helmet = require('helmet');
 const stripe = require('stripe')('sk_test_bR91izX4vLiwfnpmznILatUl00CJtWAT55');
 
-const MongoDBuri = 'mongodb+srv://coderbiceps:HPWtVI3Q90ACMn7A@cluster0-wqpap.mongodb.net/shop'
+const MongoDBuri = process.env.MONGO_URL;
 
 const store = new MongoDBStore({
     uri : MongoDBuri ,
