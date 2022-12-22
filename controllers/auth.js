@@ -17,6 +17,7 @@ const transporter = nodemailer.createTransport(
 );
 
 exports.getlogin = (req, res, next) => {
+  if (req.session?.user) return res.redirect("/home");
   let message = req.flash("error");
   if (message.length > 0) {
     message = message[0];
@@ -67,6 +68,9 @@ exports.getlogout = (req, res, next) => {
 };
 
 exports.getsignup = (req, res, next) => {
+  console.log(req.user?.email);
+  if (req.session?.isloggedin) return res.redirect("/home");
+
   let message = req.flash("error1");
   if (message.length > 0) {
     message = message[0];

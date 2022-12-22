@@ -10,6 +10,7 @@ const User = require("./models/user");
 const app = express();
 const helmet = require("helmet");
 require("dotenv").config();
+const fs = require("fs");
 // const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const MongoDBuri = process.env.MONGO_URL;
@@ -22,6 +23,10 @@ const store = new MongoDBStore({
 
 const filestorage = multer.diskStorage({
   destination: (req, file, cb) => {
+    const dir = "./images";
+    if (!fs.existsSync(path.join(__dirname, dir))) {
+      fs.mkdirSync(path.join(__dirname, dir));
+    }
     cb(null, "images");
   },
   filename: (req, file, cb) => {
