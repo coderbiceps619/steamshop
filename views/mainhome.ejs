@@ -1,178 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <link rel="stylesheet" href="/homestyle.css">
-  <link rel="stylesheet" href="/fullpage.css">
-<script src="/fullpage.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-<link rel="stylesheet" href="/styles.css">
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-/>
-<script src="/jquery.waypoints.min.js"></script>
-</head>
-<body>
-
-  <div id="fullpage">
-
-    <div class="section">
-
-  <section class="sec">    
-
-  <nav class="navbar navbar-light navbar-expand-md" style="background: transparent;" id="main-nav">
-    <div class="container-fluid"><a class="navbar-brand" href="/"><img src="/Coder_Biceps.png" style="width: 200px; height: auto;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse"
-            id="navcol-1">
-            <ul class="nav navbar-nav mx-auto" id="main-navli">
-                <li class="nav-item" role="presentation" id="navli" style="color: rgb(255,255,255);"><a class="nav-link <%= path === '/home' ? 'active' : '' %>" id="nav-links" href="/">HOME</a></li>
-                    <% if(isauth) { %>
-                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/addproduct' ? 'active' : '' %> " id="nav-links" href="/add-products">ADD PRODUCTS</a></li>
-                <li class="nav-item" role="presentation" id="navli"><a class="nav-link  <%= path === '/adminproduct' ? 'active' : '' %> " id="nav-links" href="/admin-products">ADMIN PRODUCTS</a></li>
-                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/cart' ? 'active' : '' %> " id="nav-links" href="/cart">CART</a></li>
-                <li class="nav-item" role="presentation" id="navli"><a class="nav-link <%= path === '/orders' ? 'active' : '' %> " id="nav-links" href="/orderspage">ORDERS</a></li>
-                   <% } %>
-                 
-            </ul>
-            <ul class="nav navbar-nav mx-auto" id="main-navli">
-              <% if (!isauth) {%>
-                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/login' ? 'active' : '' %> " id="nav-links" href="/login">LOGIN</a></li>
-                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/signup' ? 'active' : '' %> " id="nav-links" href="/signup">SIGNUP</a></li>
-                <% } else{ %> 
-                <li class="nav-item" style="float: right;" role="presentation" id="navli"><a class="nav-link <%= path === '/home' ? 'active' : '' %> " id="nav-links" href="/logout">LOGOUT</a></li>
-                <% } %>
-               
-            </ul>
-        </div>
-    </div>
-  </nav>
-
-  <div id="scene">
-
-    <div data-depth="0.2"><img class="cloud" src="/Cloud 2.png"></div>
-    <div data-depth="0.2"><img class="cloud" src="/Cloud1.png"></div>
-    <div data-depth="0.6"><img class="moon" src="/Moon.png"></div>
-    <div data-depth="0.2"><img class="logo" src="/Coder_Biceps_Logo.png"></div>
-    <div data-depth="0.6"><img class="man" src="/Astro_Man.png"></div>
-  </div>
-<div class="sec1but">
-  <a href="/signup" class="btn btn-primary">GET STARTED</a>
-</div>  
-          
-        <script>
-              var parallaxInstance = new Parallax(scene, {
-                              relativeInput: true});
-
-                             
-        </script>
-       </section>
-      </div>
-
-
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/homestyle.css" />
+    <link rel="stylesheet" href="/fullpage.css" />
+    <script src="/fullpage.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <script src="/jquery.waypoints.min.js"></script>
+  </head>
+  <body>
+    <div id="fullpage">
       <div class="section">
-        <section>
-          <div class=" js-wp-1 logo1div animate__animated animate__fadeIn animate__delay-5s " id="sec1ani" ><img class="logo1" src="/Coder_Biceps_Logo.png">
+        <section class="sec">
+          <nav
+            class="navbar navbar-light navbar-expand-md"
+            style="background: transparent"
+            id="main-nav"
+          >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/"
+                ><img
+                  src="/Coder_Biceps.png"
+                  style="width: 200px; height: auto" /></a
+              ><button
+                data-toggle="collapse"
+                class="navbar-toggler"
+                data-target="#navcol-1"
+              >
+                <span class="sr-only">Toggle navigation</span
+                ><span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mx-auto" id="main-navli">
+                  <li
+                    class="nav-item"
+                    role="presentation"
+                    id="navli"
+                    style="color: rgb(255, 255, 255)"
+                  >
+                    <a
+                      class="nav-link <%= path === '/home' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/"
+                      >HOME</a
+                    >
+                  </li>
+                  <% if(isauth) { %>
+                  <li class="nav-item" role="presentation" id="navli">
+                    <a
+                      class="nav-link <%= path === '/addproduct' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/add-products"
+                      >ADD PRODUCTS</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation" id="navli">
+                    <a
+                      class="nav-link <%= path === '/adminproduct' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/admin-products"
+                      >ADMIN PRODUCTS</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation" id="navli">
+                    <a
+                      class="nav-link <%= path === '/cart' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/cart"
+                      >CART</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation" id="navli">
+                    <a
+                      class="nav-link <%= path === '/orders' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/orderspage"
+                      >ORDERS</a
+                    >
+                  </li>
+                  <% } %>
+                </ul>
+                <ul class="nav navbar-nav mx-auto" id="main-navli">
+                  <% if (!isauth) {%>
+                  <li
+                    class="nav-item"
+                    style="float: right"
+                    role="presentation"
+                    id="navli"
+                  >
+                    <a
+                      class="nav-link <%= path === '/login' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/login"
+                      >LOGIN</a
+                    >
+                  </li>
+                  <li
+                    class="nav-item"
+                    style="float: right"
+                    role="presentation"
+                    id="navli"
+                  >
+                    <a
+                      class="nav-link <%= path === '/signup' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/signup"
+                      >SIGNUP</a
+                    >
+                  </li>
+                  <% } else{ %>
+                  <li
+                    class="nav-item"
+                    style="float: right"
+                    role="presentation"
+                    id="navli"
+                  >
+                    <a
+                      class="nav-link <%= path === '/home' ? 'active' : '' %>"
+                      id="nav-links"
+                      href="/logout"
+                      >LOGOUT</a
+                    >
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div id="scene">
+            <div data-depth="0.2"><img class="cloud" src="/Cloud 2.png" /></div>
+            <div data-depth="0.2"><img class="cloud" src="/Cloud1.png" /></div>
+            <div data-depth="0.6"><img class="moon" src="/Moon.png" /></div>
+            <div data-depth="0.2">
+              <img class="logo" src="/game-space.png" />
+            </div>
+            <div data-depth="0.6"><img class="man" src="/Astro_Man.png" /></div>
           </div>
-          <div class="sec2head">
-            <h2 class="heading2"> Game Space is so easy to use <br> that it’s hard to explain. </h2>
-          <p class="subhead">We made it really, really simple for people to sell a account and put whatever price they want on it</p>
+          <div class="sec1but">
+            <a href="/signup" class="btn btn-primary">GET STARTED</a>
           </div>
-          
+
+          <script>
+            var parallaxInstance = new Parallax(scene, {
+              relativeInput: true,
+            });
+          </script>
         </section>
       </div>
-     
-      <div class="section">
 
+      <div class="section">
         <section>
-          <div class="centered" >
-            <div class="iconstyle animate__animated animate__bounceIn animate__delay-2s" >
-              <icon class="icon"><ion-icon name="logo-playstation"></ion-icon></icon>
+          <div
+            class="js-wp-1 logo1div animate__animated animate__fadeIn animate__delay-5s"
+            id="sec1ani"
+          >
+            <img class="logo1" src="/Coder_Biceps_Logo.png" />
+          </div>
+          <div class="sec2head">
+            <h2 class="heading2">
+              Game Space is so easy to use <br />
+              that it’s hard to explain.
+            </h2>
+            <p class="subhead">
+              We made it really, really simple for people to sell a account and
+              put whatever price they want on it
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="section">
+        <section>
+          <div class="centered">
+            <div
+              class="iconstyle animate__animated animate__bounceIn animate__delay-2s"
+            >
+              <icon class="icon"
+                ><ion-icon name="logo-playstation"></ion-icon
+              ></icon>
               <h3>WINDOWS</h3>
             </div>
-            <div class="iconstyle animate__animated animate__bounceIn animate__delay-3s" >
+            <div
+              class="iconstyle animate__animated animate__bounceIn animate__delay-3s"
+            >
               <icon class="icon"><ion-icon name="logo-xbox"></ion-icon></icon>
               <h3>XBOX</h3>
             </div>
-            <div class="iconstyle animate__animated animate__bounceIn animate__delay-4s" >
+            <div
+              class="iconstyle animate__animated animate__bounceIn animate__delay-4s"
+            >
               <icon class="icon"><ion-icon name="logo-twitch"></ion-icon></icon>
               <h3>TWITCH</h3>
             </div>
-            <div class="iconstyle animate__animated animate__bounceIn animate__delay-5s" >
+            <div
+              class="iconstyle animate__animated animate__bounceIn animate__delay-5s"
+            >
               <icon class="icon"><ion-icon name="logo-steam"></ion-icon></icon>
               <h3>STEAM</h3>
-            </div> 
-            <div class="heading">
-              <h2 > Seriously, put any account <br> you want to sell.. </h2>
-              <p class="subhead">Or buy diff account to get you started. Your brain can do the rest. This thing is yours. Use it however you like.</p>
             </div>
-           
+            <div class="heading">
+              <h2>
+                Seriously, put any account <br />
+                you want to sell..
+              </h2>
+              <p class="subhead">
+                Or buy diff account to get you started. Your brain can do the
+                rest. This thing is yours. Use it however you like.
+              </p>
+            </div>
           </div>
-
-
         </section>
-
-
       </div>
 
       <div class="section">
-
         <section class="sec3">
           <div class="sec3head">
-            <h2>Okay, it’s not actually hard to explain.</h2> 
-            <p class="subhead sec3sub">We lied. But now you understand this thing. So come on in.</p>
+            <h2>Okay, it’s not actually hard to explain.</h2>
+            <p class="subhead sec3sub">
+              We lied. But now you understand this thing. So come on in.
+            </p>
           </div>
 
-          <div class="secbtu" >
-            <a class="btn btn-primary hard"  href="/signup" >GET STARTED</a>
-           
+          <div class="secbtu">
+            <a class="btn btn-primary hard" href="/signup">GET STARTED</a>
           </div>
-          <div class="secbtu" >
-            <a  class="btn btn-primary  ghost"  href="/login" >LOGIN</a>
+          <div class="secbtu">
+            <a class="btn btn-primary ghost" href="/login">LOGIN</a>
           </div>
-
-        
-
         </section>
-
-
       </div>
+    </div>
 
-  </div>
+    <script>
+      new fullpage("#fullpage", {
+        scrollBar: true,
+        anchors: ["firstPage", "secondPage"],
+        navigation: true,
+      });
 
-  <script>
+      $("#fullpage").fullpage({
+        scrollBar: true,
+        anchors: ["firstPage", "secondPage"],
+        navigation: true,
+      });
+    </script>
 
-new fullpage('#fullpage', {
-  scrollBar:true,
-  anchors:['firstPage','secondPage'],
-  navigation:true
-
-});
-
-$('#fullpage').fullpage({
-  scrollBar:true,
-  anchors:['firstPage','secondPage'],
-  navigation:true
-});
-
-
-
-
-
-  </script>
-
-
-
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-</body>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  </body>
 </html>
