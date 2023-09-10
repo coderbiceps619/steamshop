@@ -2,29 +2,27 @@
   color: #ffffff;
   /*border-bottom: 1px solid red;*/
   font-size: 8;
-
 }
 #nav-links:active,
-#nav-links:hover{
+#nav-links:hover {
   border-bottom: 2px solid white;
 }
 
-#navcol-1{
+#navcol-1 {
   text-align: center;
   margin-left: 180px;
 }
 
 #main-nav {
-  background: linear-gradient(to left ,#4776E6 , #8E54E9);
+  background: linear-gradient(to left, #4776e6, #8e54e9);
 }
 
-.nav .active{
+.nav .active {
   border-bottom: 1px solid white;
 }
 
-
 #body {
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   font-family: Montserrat, sans-serif;
 }
 
@@ -36,126 +34,117 @@
 #form-sec {
   width: 100%;
   height: 300px;
-  background: linear-gradient(to left ,#4776E6 , #8E54E9);
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  position: relative;
 }
 
-#form-sec .wave{
-position: absolute;
-bottom: 300px;
-left: 0;
-height: 100px;
-width: 100%;
-background-image: url(/img/wave.png);
-background-size: 1000px 100px;
+#form-sec .wave {
+  position: absolute;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  background-image: url(/img/wave.png);
+  background-size: 1000px 100px;
 }
 
-#form-sec .wave.wave1{
-animation: animate 30s linear infinite;
-z-index: 1000;
-opacity: 1;
-animation-delay: 0s;
-bottom:  300px;
-} 
+#form-sec .wave.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0px;
+}
 
-#form-sec .wave.wave2{
+#form-sec .wave.wave2 {
   animation: animate2 15s linear infinite;
   z-index: 999;
   opacity: 0.5;
   animation-delay: -5s;
-  bottom:  310px;
-  } 
-  #form-sec .wave.wave3{
-    animation: animate3 30s linear infinite;
-    z-index: 998;
-    opacity: 0.2;
-    animation-delay: -2s;
-    bottom:  315px;
-    } 
-    #form-sec .wave.wave4{
-      animation: animate4 15s linear infinite;
-      z-index: 997;
-      opacity: 0.7;
-      animation-delay: -5s;
-      bottom:  320px;
-      } 
-
-@keyframes animate
-{
-   0%{
-     background-position-x: 0;
-   }
-   100%{
-     background-position-x: 1000px;
-   }
+  bottom: 5px;
 }
-@keyframes animate2
-{
-   0%{
-     background-position-x: 0;
-   }
-   100%{
-     background-position-x: 1000px;
-   }
+#form-sec .wave.wave3 {
+  animation: animate3 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 10px;
 }
-@keyframes animate4
-{
-   0%{
-     background-position-x: 0;
-   }
-   100%{
-     background-position-x: 1000px;
-   }
-}
-@keyframes animate3
-{
-   0%{
-     background-position-x: 0;
-   }
-   100%{
-     background-position-x: 1000px;
-   }
+#form-sec .wave.wave4 {
+  animation: animate4 15s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 15px;
 }
 
-
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes animate4 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes animate3 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
 
 #h2 {
   display: block;
-  text-align : center;
+  text-align: center;
 }
 
 #h2-para {
-  color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
 }
 
 #realform {
   width: 100%;
 }
 
-.cardbtn{
+.cardbtn {
   margin-top: 80px;
   padding: 10px;
-  border-radius:5px ;
+  border-radius: 5px;
   background-color: #ffffff;
   color: black;
-  transition : background-color 0.2s ;
+  transition: background-color 0.2s;
 }
-.solid{
-  
+.solid {
   color: white;
-  background: linear-gradient(to left ,#4776E6 , #8E54E9);
+  background: linear-gradient(to left, #4776e6, #8e54e9);
 }
 
 .cardbtn:active,
-.cardbtn:hover{
-  background: linear-gradient(to left ,#4776E6 , #8E54E9);
+.cardbtn:hover {
+  background: linear-gradient(to left, #4776e6, #8e54e9);
 }
-.card{
-  border: 2px solid #8E54E9;
+.card {
+  border: 2px solid #8e54e9;
 }
 
-
-
-.centered{
+.centered {
   width: 1200px;
   margin: 0 auto;
 }
